@@ -24,6 +24,7 @@ body{
 .mask-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
 }
 .mask{
   opacity: 0;
