@@ -432,13 +432,15 @@ function playerHasWon() {
     <div></div>
     <div class="middle2">
       <div class="youwon">
-        Wow... You actually won
-      </div>
-      <div class="youwon2">
-      Refresh page to play again <3
+        Wow... You actually won. Refresh page to play again.
       </div>
       <div>
         <img src="masks/love.png">
+      </div>
+      <div class="mask-grid">
+      <img src="masks/secondmask.png" class="mask found" id="first-mask">
+      <img src="masks/firstmask.png" class="mask found" id="second-mask">
+      <img src="masks/thirdmask.png" class="mask found" id="third-mask">
       </div>
     </div>
     <div></div>
