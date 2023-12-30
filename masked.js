@@ -328,7 +328,7 @@ function revealWord(guess) {
         }else if (secrets.secret_three.includes(letter)) {
           box.classList.add('thirdwrong');
         } else {
-          box.classList.add('empty')
+          box.classList.add('empty');
         }
       }
     }), animation_duration;
