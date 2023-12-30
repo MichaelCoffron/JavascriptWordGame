@@ -169,6 +169,18 @@ body{
   grid-template-rows: 1fr 1fr 1fr;
   text-align: center;
 }
+
+.clickme{
+  opacity: 0;
+  text-align: center;
+  width: 200px;
+}
+@media screen and (max-width: 600px){
+  .clickme{
+    opacity: 1;
+  }
+}
+
 @keyframes flip {
   0% {
     transform: scaleY(1);
