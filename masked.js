@@ -47,55 +47,7 @@ const dictionary_usable = [
   "yuk", "yum", "yup", "zap", "zel", "zen", "zex", "zig", "zip", "zit",
   "zoo"
 ]
-const dictionary_usable_hints = [
-  "abs", "ace", "act", "add", "age", "ago", "aid", "ail", "aim", "air",
-  "ale", "all", "alt", "amp", "and", "ant", "any", "ape", "arc", "are",
-  "ark", "arm", "art", "ash", "ask", "ass", "ate", "awe", "axe", "bad",
-  "bag", "ban", "bar", "bat", "bay", "bed", "bee", "beg", "ben", "bet",
-  "bid", "big", "bin", "bio", "bit", "bob", "bog", "boo", "bop", "bot",
-  "bow", "box", "boy", "bra", "bro", "bug", "bum", "bun", "bus", "but",
-  "buy", "bye", "cab", "can", "cap", "car", "cat", "cob", "cod", "cog",
-  "con", "cop", "cot", "cow", "cry", "cub", "cue", "cum", "cup", "cut",
-  "dad", "dam", "dap", "day", "den", "dev", "dew", "dib", "did", "die",
-  "dig", "dim", "dip", "doc", "dog", "dot", "dry", "dub", "due", "dug",
-  "duo", "dye", "ear", "eat", "eel", "egg", "ego", "elf", "elk", "elm",
-  "emu", "end", "eve", "eye", "fad", "fag", "fan", "far", "fat", "fax",
-  "fed", "fee", "few", "fib", "fin", "fir", "fit", "fix", "flu", "fly",
-  "foe", "fog", "for", "fox", "fry", "fun", "fur", "gag", "gap", "gas",
-  "gay", "gel", "gem", "get", "gig", "gin", "god", "goo", "got", "gov",
-  "gum", "gun", "gut", "guy", "gym", "had", "hag", "ham", "has", "hat",
-  "hay", "hem", "hen", "her", "hex", "hey", "hid", "him", "hip", "his",
-  "hit", "hoe", "hog", "hop", "hot", "how", "hub", "hue", "hug", "huh",
-  "hum", "hun", "hut", "ice", "icy", "ill", "imp", "ink", "inn", "ivy",
-  "jab", "jam", "jar", "jet", "jew", "jig", "job", "joe", "jog", "joy",
-  "jug", "keg", "key", "kid", "kin", "kit", "kob", "lab", "lad", "lag",
-  "lap", "law", "lax", "lay", "led", "leg", "let", "lid", "lie", "lip",
-  "lit", "log", "lot", "low", "mac", "mad", "mag", "man", "map", "mat",
-  "may", "meg", "meh", "men", "met", "mew", "mid", "mil", "mom", "moo",
-  "mop", "mud", "mug", "nah", "nap", "nat", "nod", "nog", "nor", "not",
-  "now", "nun", "nut", "nye", "oak", "oar", "oat", "obi", "odd", "ode",
-  'off', 'oil', 'old', 'one', 'orb', 'orc', 'ore', 'our', 'out', 'owl',
-  'own', 'pad', 'pal', 'pan', 'pat', 'pay', 'pea', 'pee', 'peg', 'pen',
-  'per', 'pet', 'pie', 'pig', 'pin', 'pit', 'poo', 'pop', 'pot', 'pre',
-  'pro', 'pry', 'pub', 'pug', 'pun', 'pup', 'pus', 'put', 'rad', 'rag',
-  'ram', 'ran', 'rap', 'rat', 'raw', 'ray', 'red', 'ref', 'rep', 'rev',
-  'rex', 'rib', 'rid', 'rig', 'rim', 'rip', 'rob', 'rod', 'rub', 'rug',
-  'rum', 'run', 'sad', 'sag', 'sap', 'sat', 'saw', 'say', 'sea', 'sec',
-  'see', 'set', 'sex', 'she', 'shy', 'sib', 'sim', 'sin', 'sip', 'sir',
-  'sis', 'sit', 'six', 'ski', 'sky', 'sly', 'sob', 'sod', 'son', 'sow',
-  'soy', 'spa', 'spy', 'sty', 'sub', 'sue', 'sum', 'sun', 'sup', 'sus',
-  "tab", "tad", "tag", "tam", "tan", "tap", "tar", "tax", "tea", "ted",
-  "tee", "ten", "the", "tho", "thy", "tic", "tid", "tie", "til", "tin",
-  "tip", "tit", "tod", "toe", "tog", "tom", "ton", "too", "top", "tor",
-  "tow", "toy", "try", "tsk", "tub", "tug", "tum", "tux", "two", "ufo",
-  "ugh", "uke", "ums", "ups", "urn", "urp", "use", "van", "vat", "veg",
-  "vet", "vex", "vid", "vow", "vox", "wad", "wap", "war", "was", "wax",
-  "way", "web", "wed", "wee", "wem", "wen", "wet", "who", "why", "wig",
-  "win", "wit", "woe", "wok", "won", "woo", "wow", "wry", "yah", "yak",
-  "yam", "yap", "yay", "yea", "yep", "yes", "yet", "yin", "yip", "you",
-  "yuk", "yum", "yup", "zap", "zel", "zen", "zex", "zig", "zip", "zit",
-  "zoo"
-]
+
 const dictionary = [
   "aah", "aal", "aas", "aba", "abb", "abo", "abs", "aby", "ace", "ach", 
   "act", "add", "ado", "ads", "adz", "aff", "aft", "aga", "age", "ago", 
@@ -425,7 +377,7 @@ function revealWord(guess) {
       }
       resetNotify()
       if (Wins === 3){
-        notifyPlayer('Wow. You actually won, congrats.')
+        playerHasWon();
       }
   } else if (isGameOver) {
     notifyPlayer(`You lost. the correct words were ${secrets.secret_one.toUpperCase()}, ${secrets.secret_two.toUpperCase()}, and ${secrets.secret_three.toUpperCase()}.`)
@@ -473,6 +425,27 @@ function removeActiveKeys() {
   }
 }
 
+function playerHasWon() {
+  everything = document.getElementById('everything');
+  everything.innerHTML = `
+  <div class="template">
+    <div></div>
+    <div class="middle2">
+      <div class="youwon">
+        Wow... You actually won
+      </div>
+      <div class="youwon2">
+      Refresh page to play again <3
+      </div>
+      <div>
+        <img src="masks/love.png">
+      </div>
+    </div>
+    <div></div>
+  </div>
+  `;
+
+}
 
 
 startup();
